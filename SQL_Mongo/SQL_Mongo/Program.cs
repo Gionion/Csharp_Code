@@ -16,12 +16,11 @@ namespace SQL_Mongo
         static void Main(string[] args)
         {
             //sql server
-            string ConnectionString = @"Data Source = 172.16.24.103; user id=sa; password=Diamond2013; Initial Catalog = EpeleDB";
+            string ConnectionString = @"Data Source = put_the_ip; user id=user; password=pwd; Initial Catalog = DB_name";
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
 
-            string query = "SELECT [IdVar], [IniDat], [FinDat], [ValMax], [ValMin], [Val], [Valsdv], [Rlb], [RlbSta], [Rlbchk], [Rbl] FROM [EpeleDB].[dbo].[Msi_His_Var] " +
-                "WHERE [IdVar] = 50002 ORDER BY [IniDat]";
+            string query = "SELECT * FROM foo";
             SqlCommand queryCommand = new SqlCommand(query, conn);
             SqlDataReader queryCommandReader = queryCommand.ExecuteReader();
             DataTable dataTable = new DataTable();
@@ -29,11 +28,12 @@ namespace SQL_Mongo
             //mongo
             var connString = "mongodb://localhost:27017";
             var client = new MongoClient(connString);
-            var database = client.GetDatabase("basudate");
-            var collec = database.GetCollection<BsonDocument>("sql");
+            var database = client.GetDatabase("fooman");
+            var collec = database.GetCollection<BsonDocument>("foomanchoo");
 
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
+                //this are random values.
                 int? idvar = null;
                 string inidat = String.Empty;
                 string findat = String.Empty;
