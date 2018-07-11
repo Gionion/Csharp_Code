@@ -25,8 +25,6 @@ namespace RpcServerApp
                     const string requestQueueName = "requestqueue";
                     channel.QueueDeclare(requestQueueName, true, false, false, null);
 
-                    // consumer
-
                     var consumer = new EventingBasicConsumer(channel);
                     consumer.Received += Consumer_Received;
                     channel.BasicConsume(requestQueueName, true, consumer);
