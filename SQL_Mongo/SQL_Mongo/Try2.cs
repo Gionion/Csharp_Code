@@ -19,7 +19,7 @@ namespace SQL_Mongo
             string ConnectionString = @"Data Source = 172.16.24.103; user id=x; password=xxx; Initial Catalog = xDB";
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
-            //int idvariable = 50000;
+            
             int idvariable = 50972;
             while (idvariable < 53075)
             {
