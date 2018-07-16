@@ -21,6 +21,7 @@ namespace SQL_Mongo
             conn.Open();
             
             int idvariable = 50972;
+            //optimum code would've been to have this 53075 as the result of a "SELECT MAX([IdVar])..." stored in a variable
             while (idvariable < 53075)
             {
                 DateTime fecha = new DateTime(2013, 8, 7);
