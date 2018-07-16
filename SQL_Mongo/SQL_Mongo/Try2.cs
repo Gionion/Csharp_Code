@@ -30,8 +30,9 @@ namespace SQL_Mongo
                     string fecha_insert = fecha.ToString("yyyy-MM-dd HH:mm:ss");
                     string fecha_insert_fin = fecha_fin.ToString("yyyy-MM-dd HH:mm:ss");
                     //sql server
-                    string query = "SELECT [IdVar], CONVERT(DateTime,[IniDat],131) AS [IniDat], CONVERT(DateTime,[FinDat],131) AS [FinDat], [ValMax], [ValMin], [Val], [Valsdv], [Rlb], [RlbSta], [Rlbchk], [Rbl] FROM [EpeleDB].[dbo].[Msi_His_Var] " +
-                        "WHERE [IdVar] = " + idvariable + " AND [Inidat] BETWEEN '" + fecha_insert + "' AND '" + fecha_insert_fin + "' ORDER BY [IniDat]";
+                    string query = "SELECT [IdVar], CONVERT(DateTime,[IniDat],131) AS [IniDat], CONVERT(DateTime,[FinDat],131) AS [FinDat], [ValMax], [ValMin], [Val], [Valsdv], [Rlb], [RlbSta], [Rlbchk], [Rbl]" +
+                                   "FROM [EpeleDB].[dbo].[Msi_His_Var] " +
+                                   "WHERE [IdVar] = " + idvariable + " AND [Inidat] BETWEEN '" + fecha_insert + "' AND '" + fecha_insert_fin + "' ORDER BY [IniDat]";
 
                     SqlCommand queryCommand = new SqlCommand(query, conn);
                     SqlDataReader queryCommandReader = queryCommand.ExecuteReader();
