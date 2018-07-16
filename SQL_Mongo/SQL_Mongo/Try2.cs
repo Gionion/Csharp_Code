@@ -93,7 +93,6 @@ namespace SQL_Mongo
                             {
                                 rlb = Convert.ToInt32((dataTable.Rows[i]["rlb"]));
                             }
-                            //rlb = Convert.ToInt32((dataTable.Rows[i]["rlb"]));
                             rlbsta = Convert.ToString((dataTable.Rows[i]["rlbsta"]));
                             rlbchk = Convert.ToString((dataTable.Rows[i]["rlbchk"]));
                             rbl = Convert.ToInt32((dataTable.Rows[i]["rbl"]));
@@ -111,10 +110,8 @@ namespace SQL_Mongo
                             { "rlbsta", rlbchk },
                             { "rbl", rbl }
                         };
-                        //collec.InsertOneAsync(documnt);
                         collec.InsertOne(documnt);
                     }
-                    //Console.Read();
                     fecha = fecha.AddDays(1);
                     fecha_fin = fecha_fin.AddDays(1);
                 }
