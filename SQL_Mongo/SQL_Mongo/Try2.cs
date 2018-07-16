@@ -16,7 +16,7 @@ namespace SQL_Mongo
     {
         static void Main(string[] args)
         {
-            string ConnectionString = @"Data Source = 172.16.24.103; user id=x; password=xxx; Initial Catalog = xDB";
+            string ConnectionString = @"Data Source = xxxx.xxxx.xxxx.xxxx; user id=x; password=xxx; Initial Catalog = xDB";
             SqlConnection conn = new SqlConnection(ConnectionString);
             conn.Open();
             
