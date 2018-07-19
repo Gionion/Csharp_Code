@@ -35,8 +35,7 @@ namespace RpcClientApp
                     else
                     {
                         var response = await rpcClient.SendAsync(message);
-                        using (var colour = new ScopedConsoleColour(ConsoleColor.Yellow))
-                            Console.Write($"Response was: {response} \n");
+                        Console.Write($"Response was: {response} \n");
                     }
                 }
             }
